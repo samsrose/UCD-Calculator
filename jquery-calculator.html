@@ -108,6 +108,19 @@ $(document).ready(function(){
                 case "plus" :
                     result = parseInt(equation[0]) + parseInt(equation[2]);
                     $("#result").html(result);
+                    break;
+                case "minus" :
+                    result = parseInt(equation[0]) - parseInt(equation[2]);
+                    $("#result").html(result);
+                    break;
+                case "times" :
+                    result = parseInt(equation[0]) * parseInt(equation[2]);
+                    $("#result").html(result);
+                    break;
+                case "divide" :
+                    result = parseInt(equation[0]) / parseInt(equation[2]);
+                    $("#result").html(result);
+                    break;
             }
         }
 
