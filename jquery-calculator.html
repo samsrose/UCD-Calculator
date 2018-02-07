@@ -80,7 +80,39 @@
 $(document).ready(function(){
 
 // Your code here...
+    var firstNumber = "", secondNumber = "", operator = "";
+    var index = 0;
+    var equation = [];
+    equation[0] = "";
+    equation[1] = "";
+    equation[2] = "";
+    $(".btn").on("click", function(){
+        var value = $(this).attr("value");
+        console.log($(this).attr("value"));
+        if(index == 0 && $(this).hasClass("number")){
+            console.log("Log1");
+            equation[index] += value;
+        }
+        if(index == 0 && $(this).hasClass("operator") && equation[0] != ""){
+            index++;
+            equation[index] = $(this).html();
+            $("#operator").html($(this).html());
+            index++;
+        }
+        if(index == 2 && $(this).hasClass("number")){
+            equation[index] += value;
+        }
 
+        if()
+
+        if(index == 0){
+            console.log("Log1");
+            $("#first-number").html(equation[0]);
+        }
+
+        if(index == 2)
+            $("#second-number").html(equation[2]);
+    });
 
 });
 
