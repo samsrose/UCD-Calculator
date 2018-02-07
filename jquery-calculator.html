@@ -90,7 +90,6 @@ $(document).ready(function(){
         var value = $(this).attr("value");
         console.log($(this).attr("value"));
         if(index == 0 && $(this).hasClass("number")){
-            console.log("Log1");
             equation[index] += value;
         }
         if(index == 0 && $(this).hasClass("operator") && equation[0] != ""){
@@ -108,24 +107,27 @@ $(document).ready(function(){
                 case "plus" :
                     result = parseInt(equation[0]) + parseInt(equation[2]);
                     $("#result").html(result);
+                    index++;
                     break;
                 case "minus" :
                     result = parseInt(equation[0]) - parseInt(equation[2]);
                     $("#result").html(result);
+                    index++;
                     break;
                 case "times" :
                     result = parseInt(equation[0]) * parseInt(equation[2]);
                     $("#result").html(result);
+                    index++;
                     break;
                 case "divide" :
                     result = parseInt(equation[0]) / parseInt(equation[2]);
                     $("#result").html(result);
+                    index++;
                     break;
             }
         }
 
         if(index == 0){
-            console.log("Log2");
             $("#first-number").html(equation[0]);
         }
 
