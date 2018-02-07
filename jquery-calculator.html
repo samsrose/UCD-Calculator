@@ -80,12 +80,12 @@
 $(document).ready(function(){
 
 // Your code here...
-    var firstNumber = "", secondNumber = "", operator = "";
     var index = 0;
     var equation = [];
     equation[0] = "";
     equation[1] = "";
     equation[2] = "";
+    var result;
     $(".btn").on("click", function(){
         var value = $(this).attr("value");
         console.log($(this).attr("value"));
@@ -95,7 +95,7 @@ $(document).ready(function(){
         }
         if(index == 0 && $(this).hasClass("operator") && equation[0] != ""){
             index++;
-            equation[index] = $(this).html();
+            equation[index] = value;
             $("#operator").html($(this).html());
             index++;
         }
@@ -103,10 +103,16 @@ $(document).ready(function(){
             equation[index] += value;
         }
 
-        if()
+        if(index == 2 &&  $(this).hasClass("equal")){
+            switch(equation[1]){
+                case "plus" :
+                    result = parseInt(equation[0]) + parseInt(equation[2]);
+                    $("#result").html(result);
+            }
+        }
 
         if(index == 0){
-            console.log("Log1");
+            console.log("Log2");
             $("#first-number").html(equation[0]);
         }
 
@@ -120,3 +126,5 @@ $(document).ready(function(){
 
 </body>
 </html>
+
+
