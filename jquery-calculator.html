@@ -91,15 +91,18 @@ $(document).ready(function(){
         console.log($(this).attr("value"));
         if(index == 0 && $(this).hasClass("number")){
             equation[index] += value;
+            $("#first-number").html(equation[0]);
         }
         if(index == 0 && $(this).hasClass("operator") && equation[0] != ""){
             index++;
             equation[index] = value;
             $("#operator").html($(this).html());
+            
             index++;
         }
         if(index == 2 && $(this).hasClass("number")){
             equation[index] += value;
+            $("#second-number").html(equation[2]);
         }
 
         if(index == 2 &&  $(this).hasClass("equal")){
@@ -127,12 +130,16 @@ $(document).ready(function(){
             }
         }
 
-        if(index == 0){
-            $("#first-number").html(equation[0]);
+        if($(this).hasClass("clear")){
+            $("#first-number").empty();
+            $("#operator").empty();
+            $("#second-number").empty();
+            equation[0] = "";
+            equation[1] = "";
+            equation[2] = "";
+            index = 0;
         }
-
-        if(index == 2)
-            $("#second-number").html(equation[2]);
+    
     });
 
 });
