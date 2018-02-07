@@ -127,6 +127,11 @@ $(document).ready(function(){
                     $("#result").html(result);
                     index++;
                     break;
+                case "power" :
+                    result = Math.pow(parseInt(equation[0]), parseInt(equation[2]))
+                    $('#result').html(result);
+                    index++
+                    break;
             }
         }
 
